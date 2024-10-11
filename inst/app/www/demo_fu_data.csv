@@ -1,0 +1,121 @@
+"sequence_no","followup_start_date","off_treatment_date","off_treatment_reason","off_study_date","off_study_reason","best_response","best_response_date","last_followup_date","last_known_survival_status","date_of_progression"
+"1","2016-06-11","2016-06-11","Disease progression, relapse during active treatment","2016-12-16","Death","Stable Disease","2016-05-09","2016-11-14","Dead","2016-06-11"
+"2","2016-09-19","2016-09-19","Disease progression, relapse during active treatment","2016-12-31","Death","Progressive Disease","2016-09-16","2016-10-17","Dead","2016-09-16"
+"3","2016-07-27","2016-07-27","Disease progression, relapse during active treatment","2016-09-25","Death","Progressive Disease","2016-07-23","2016-08-19","Dead","2016-07-23"
+"4","2016-09-02","2016-09-02","Disease progression, relapse during active treatment","2016-11-12","Death","Progressive Disease","2016-09-02","2016-09-30","Dead","2016-09-02"
+"5","2016-11-30","2016-11-30","Disease progression, relapse during active treatment","2017-04-06","Death","Partial Response","2016-10-05",NA,"Dead","2016-11-30"
+"6","2016-11-07","2016-11-07","Patient withdrawal or refusal after beginning protocol therapy","2017-04-20","Death","Stable Disease","2016-10-21","2017-02-07","Dead",NA
+"7","2016-12-20","2016-12-20","Disease progression, relapse during active treatment","2017-01-10","Death","Stable Disease","2016-11-16","2016-12-20","Dead","2016-12-19"
+"8","2017-01-11","2017-01-11","Disease progression, relapse during active treatment","2017-09-18","Death","Progressive Disease","2017-01-11","2017-08-03","Dead","2017-01-11"
+"9","2017-06-23","2017-06-23","Disease progression, relapse during active treatment","2017-11-23","Death","Stable Disease","2017-03-31","2017-09-15","Dead","2017-06-23"
+"10","2017-07-20","2017-07-20","Disease progression, relapse during active treatment",NA,NA,"Stable Disease","2017-03-02","2021-03-31","Alive","2017-07-20"
+"120","2016-12-27","2016-12-27","Patient withdrawal or refusal prior to beginning protocol therapy","2016-12-27","Death","Not Assessed",NA,"2016-12-20","Dead",NA
+"11","2017-07-10","2017-07-10","Adverse Event/Side Effects/Complications","2018-08-13","Death","Stable Disease","2017-07-14","2018-04-16","Dead","2017-10-30"
+"12","2020-07-30","2020-07-30","Adverse Event/Side Effects/Complications","2020-09-30","Death","Partial Response","2017-04-25",NA,"Dead",NA
+"13","2017-05-16","2017-05-16","Death on study","2017-05-16","Death","Progressive Disease",NA,NA,"Dead",NA
+"14","2017-09-26","2017-09-26","Disease progression, relapse during active treatment","2017-10-18","Death","Stable Disease","2017-06-29","2017-10-17","Dead","2017-09-26"
+"15","2018-06-29","2018-06-29","Death on study","2018-06-29","Death","Stable Disease",NA,NA,"Dead",NA
+"16","2017-08-02","2017-08-02","Death on study","2017-08-02","Death","Stable Disease","2017-07-14",NA,"Dead",NA
+"17","2017-06-20","2017-06-20","Disease progression, relapse during active treatment","2017-08-05","Death","Progressive Disease",NA,"2017-06-20","Dead","2017-06-07"
+"18","2018-09-27","2018-09-27","Adverse Event/Side Effects/Complications","2020-09-14","Death","Stable Disease","2017-07-18","2020-09-09","Dead",NA
+"19","2017-06-06","2017-06-06","Patient withdrawal or refusal after beginning protocol therapy","2017-06-06","Consent withdrawn","Not Assessed",NA,"2017-06-06","Dead",NA
+"20","2017-06-20","2017-06-20","Patient withdrawal or refusal after beginning protocol therapy","2018-01-14","Death","Not Assessed",NA,"2017-12-05","Dead","2017-06-20"
+"21","2017-07-31","2017-07-31","Disease progression, relapse during active treatment","2017-08-09","Death","Progressive Disease","2017-07-31","2017-07-31","Dead","2017-07-31"
+"22","2018-05-21","2018-05-21","Disease progression, relapse during active treatment","2018-11-20","Death","Partial Response","2017-12-19",NA,"Dead","2018-03-22"
+"23","2017-08-14","2017-08-14","Patient withdrawal or refusal after beginning protocol therapy","2017-08-14","Patient refused follow-up","Progressive Disease","2017-08-11",NA,"Alive","2017-08-11"
+"24","2018-05-21","2018-05-21","Disease progression, relapse during active treatment","2018-06-08","Death","Stable Disease","2017-11-20",NA,"Dead","2018-05-21"
+"25","2017-09-20","2017-09-20","Alternative Therapy","2018-01-10","Death","Progressive Disease","2017-08-31","2017-11-30","Dead","2017-08-31"
+"26","2018-02-23","2018-02-23","Disease progression, relapse during active treatment","2018-09-03","Death","Stable Disease","2017-08-25",NA,"Dead","2018-02-23"
+"27","2017-09-01","2017-09-01","Disease progression, relapse during active treatment","2018-10-24","Death","Progressive Disease","2017-09-01","2017-12-27","Dead","2017-09-01"
+"28","2019-07-22","2019-07-22","Other","2019-08-22","Death","Partial Response",NA,NA,"Dead",NA
+"29","2018-07-06","2018-07-06","Alternative Therapy","2019-04-08","Death","Stable Disease",NA,NA,"Dead",NA
+"30","2018-07-09","2018-07-09","Disease progression, relapse during active treatment","2019-06-06","Death","Partial Response","2017-10-18",NA,"Dead","2018-07-09"
+"31","2017-10-30","2017-10-30","Disease progression, relapse during active treatment","2017-12-18","Death","Stable Disease","2017-10-30","2017-10-30","Dead","2017-10-30"
+"32","2017-12-18","2017-12-18","Disease progression, relapse during active treatment","2018-06-15","Death","Progressive Disease","2017-09-18","2018-03-09","Dead","2017-12-14"
+"33",NA,"2019-05-01","Death on study","2019-05-01","Death","Stable Disease","2017-10-13",NA,"Dead",NA
+"34","2018-08-22","2018-08-22","Disease progression, relapse during active treatment","2020-10-13","Death","Partial Response","2017-11-29","2020-05-12","Dead","2018-07-10"
+"35","2018-03-14","2018-03-14","Other","2018-03-14","Patient lost to follow-up","Stable Disease","2017-10-26",NA,"Dead",NA
+"36","2018-12-10","2018-12-10","Disease progression, relapse during active treatment","2020-04-06","Death","Partial Response","2017-10-06","2019-07-16","Dead","2018-11-12"
+"37","2017-11-27","2017-11-27","Disease progression, relapse during active treatment","2018-07-07","Death","Progressive Disease","2017-10-16","2017-11-27","Dead","2017-11-27"
+"38","2018-01-05","2018-01-05","Disease progression, relapse during active treatment","2018-07-20","Death","Stable Disease","2017-11-15",NA,"Dead","2018-01-05"
+"39",NA,"2017-10-21","Death on study","2017-10-31","Death","Progressive Disease","2017-10-03",NA,"Dead","2017-10-03"
+"40","2017-10-25","2017-10-25","Patient withdrawal or refusal after beginning protocol therapy","2018-01-10","Death","Progressive Disease","2017-10-05","2017-10-25","Dead","2017-10-05"
+"41","2018-11-05","2018-11-05","Disease progression, relapse during active treatment","2021-04-12","Death","Partial Response","2018-05-08","2020-11-30","Dead","2018-11-05"
+"42","2018-05-01","2018-05-01","Disease progression before active treatment","2019-03-07","Death","Stable Disease","2017-12-26",NA,"Dead","2018-05-01"
+"43","2018-08-27","2018-08-27","Disease progression, relapse during active treatment",NA,NA,"Stable Disease","2017-12-14","2021-11-15","Alive","2018-08-27"
+"44","2020-04-21","2020-04-21","Disease progression, relapse during active treatment",NA,NA,"Partial Response","2018-02-22","2021-09-10","Alive","2020-04-21"
+"45","2018-01-12","2018-01-12","Disease progression, relapse during active treatment","2018-04-18","Death","Progressive Disease","2018-01-12",NA,"Dead","2018-01-12"
+"46","2018-02-05","2018-02-05","Disease progression, relapse during active treatment","2019-01-20","Death","Stable Disease","2017-12-22",NA,"Dead","2018-02-05"
+"47","2018-02-16","2018-02-16","Patient withdrawal or refusal after beginning protocol therapy","2020-11-09","Death","Stable Disease","2018-01-02","2020-06-05","Dead",NA
+"48","2018-08-17","2018-08-17","Adverse Event/Side Effects/Complications","2019-02-08","Consent withdrawn","Partial Response","2018-02-23",NA,"Dead",NA
+"49","2018-03-01","2018-03-01","Disease progression, relapse during active treatment","2018-11-11","Death","Stable Disease","2018-01-17",NA,"Dead","2018-03-01"
+"50","2018-02-05","2018-02-05","Patient withdrawal or refusal after beginning protocol therapy","2018-02-05","Consent withdrawn","Progressive Disease","2018-01-26",NA,"Dead","2018-01-26"
+"51","2018-02-02","2018-02-02","Disease progression, relapse during active treatment","2018-02-05","Death","Progressive Disease","2018-02-02","2018-01-17","Dead","2018-02-02"
+"52","2018-03-08","2018-03-08","Disease progression, relapse during active treatment","2018-06-13","Death","Progressive Disease","2018-03-08",NA,"Dead","2018-03-08"
+"53","2018-03-16","2018-03-16","Patient withdrawal or refusal after beginning protocol therapy","2018-05-30","Death","Stable Disease","2018-03-16",NA,"Dead",NA
+"54","2020-01-31","2020-01-31","Disease progression, relapse during active treatment","2020-08-06","Death","Partial Response","2018-03-29","2020-07-17","Dead","2020-01-31"
+"55","2019-02-26","2019-02-26","Disease progression, relapse during active treatment","2019-06-05","Patient refused follow-up","Stable Disease","2018-04-17","2019-06-05","Alive","2019-02-26"
+"56","2018-04-13","2018-04-13","Disease progression, relapse during active treatment","2020-05-07","Death","Progressive Disease","2018-04-13","2019-09-06","Dead","2018-04-13"
+"57","2020-06-29","2020-06-29","Treatment completed per protocol criteria",NA,NA,"Partial Response","2018-07-02",NA,"Alive","2021-10-10"
+"58","2018-05-25","2018-05-25","Disease progression before active treatment",NA,NA,"Progressive Disease","2018-05-25","2021-11-08","Alive","2018-05-25"
+"59","2018-06-08","2018-06-08","Disease progression, relapse during active treatment","2019-09-19","Death","Progressive Disease","2018-06-08","2019-06-04","Dead","2018-06-08"
+"60","2018-08-03","2018-08-03","Disease progression, relapse during active treatment","2019-08-13","Death","Partial Response","2018-06-22",NA,"Dead","2018-08-03"
+"61","2020-04-10","2020-04-10","Disease progression, relapse during active treatment",NA,NA,"Partial Response","2020-01-03","2021-06-02","Alive","2020-04-10"
+"62","2019-01-08","2019-01-08","Patient off treatment for other complicating disease","2019-03-15","Death","Stable Disease","2018-07-20",NA,"Dead",NA
+"63","2018-08-10","2018-08-10","Disease progression, relapse during active treatment","2018-08-18","Death","Stable Disease","2018-07-28","2018-08-10","Dead","2018-08-10"
+"64","2018-10-15","2018-10-15","Disease progression, relapse during active treatment","2019-09-09","Death","Stable Disease","2018-07-24","2019-06-24","Dead","2018-09-06"
+"65","2019-10-21","2019-10-21","Disease progression, relapse during active treatment","2020-01-21","Death","Partial Response","2019-06-10",NA,"Dead","2019-10-21"
+"66","2018-09-13","2018-09-13","Death on study","2018-09-13","Death","Progressive Disease","2018-09-07",NA,"Dead","2018-09-07"
+"67","2020-10-12","2020-10-12","Treatment completed per protocol criteria",NA,NA,"Partial Response","2019-02-15",NA,"Alive",NA
+"68","2018-12-11","2018-12-11","Adverse Event/Side Effects/Complications","2019-03-17","Death","Stable Disease","2018-11-05",NA,"Dead","2019-01-29"
+"69","2018-12-21","2018-12-21","Adverse Event/Side Effects/Complications","2019-01-07","Death","Stable Disease","2018-09-28",NA,"Dead",NA
+"70","2020-03-03","2020-03-03","Adverse Event/Side Effects/Complications","2021-01-23","Death","Partial Response","2018-11-30","2020-06-26","Dead",NA
+"71","2018-11-02","2018-11-02","Disease progression, relapse during active treatment","2018-12-28","Death","Progressive Disease","2018-11-02",NA,"Dead","2018-11-02"
+"72","2020-10-23","2020-10-23","Treatment completed per protocol criteria",NA,NA,"Partial Response","2018-10-31",NA,"Alive",NA
+"73","2018-11-14","2018-10-31","Disease progression, relapse during active treatment","2018-12-18","Death","Progressive Disease","2018-10-31",NA,"Dead","2018-10-31"
+"74","2018-11-09","2018-11-09","Disease progression, relapse during active treatment","2019-01-12","Death","Progressive Disease","2018-11-09",NA,"Dead","2018-11-09"
+"75","2019-11-22","2019-11-22","Other","2019-12-11","Death","Partial Response","2018-12-18",NA,"Dead",NA
+"76","2019-01-04","2019-01-04","Death on study","2019-01-04","Death","Stable Disease","2018-11-12",NA,"Dead",NA
+"77","2019-07-12","2019-07-12","Disease progression, relapse during active treatment","2019-11-21","Death","Partial Response","2019-01-18","2019-10-04","Dead","2019-07-12"
+"78","2019-04-22","2019-04-22","Adverse Event/Side Effects/Complications","2020-03-23","Death","Partial Response","2019-03-04","2019-12-31","Dead","2019-04-22"
+"79","2019-01-04","2019-01-04","Disease progression, relapse during active treatment","2019-10-13","Death","Progressive Disease","2019-01-04","2019-09-06","Dead","2019-01-04"
+"80",NA,"2019-01-29","Death on study","2019-01-29","Death","Stable Disease","2019-01-11",NA,"Dead",NA
+"81","2019-05-07","2019-05-07","Alternative Therapy",NA,NA,"Stable Disease","2019-02-09","2021-11-16","Alive",NA
+"82","2019-08-07","2019-08-07","Patient withdrawal or refusal after beginning protocol therapy","2019-09-26","Consent withdrawn","Partial Response","2019-04-16","2019-09-26","Dead",NA
+"83","2019-09-23","2019-09-23","Disease progression, relapse during active treatment",NA,NA,"Stable Disease","2019-08-17","2021-10-25","Alive","2019-09-22"
+"84","2019-12-31","2019-12-31","Disease progression, relapse during active treatment","2020-04-01","Death","Progressive Disease","2019-12-31",NA,"Dead","2019-12-31"
+"85","2021-12-10","2021-12-10","Treatment completed per protocol criteria",NA,NA,"Partial Response","2020-01-12",NA,"Alive",NA
+"86","2022-02-21","2022-02-21","Treatment completed per protocol criteria",NA,NA,"Partial Response","2021-07-26",NA,"Alive",NA
+"87","2020-09-03","2020-09-03","Disease progression, relapse during active treatment",NA,NA,"Stable Disease","2020-05-27","2021-10-19","Alive","2020-08-25"
+"88",NA,"2022-01-31","Treatment completed per protocol criteria",NA,NA,"Partial Response","2021-11-01",NA,"Alive",NA
+"89",NA,"2020-02-26","Patient withdrawal or refusal after beginning protocol therapy","2020-02-27","Consent withdrawn","Not Assessed",NA,NA,"Dead",NA
+"90","2020-06-23","2020-06-23","Death on study","2020-06-23","Death","Progressive Disease","2020-05-12","2020-06-23","Dead","2020-05-12"
+"91","2020-07-27","2020-07-27","Disease progression, relapse during active treatment","2021-07-23","Death","Progressive Disease","2020-06-12","2021-06-29","Dead","2020-07-27"
+"92","2020-05-14","2020-05-14","Death on study","2020-05-14","Death","Not Evaluable",NA,"2020-05-14","Dead",NA
+"93",NA,NA,NA,NA,NA,"Partial Response","2021-01-25",NA,"Alive",NA
+"94",NA,NA,NA,NA,NA,"Stable Disease","2020-08-10",NA,"Alive",NA
+"95","2020-10-20","2020-10-20","Disease progression, relapse during active treatment","2020-10-31","Death","Stable Disease","2020-08-31",NA,"Dead","2020-10-20"
+"96","2020-09-30","2020-09-30","Adverse Event/Side Effects/Complications","2021-02-25","Death","Stable Disease","2020-09-21",NA,"Dead",NA
+"97",NA,"2020-10-11","Death on study","2020-10-11","Death","Not Assessed",NA,NA,"Dead",NA
+"98","2020-11-20","2020-11-20","Disease progression, relapse during active treatment",NA,NA,"Progressive Disease","2020-11-19","2021-10-22",NA,"2020-11-19"
+"99",NA,NA,NA,NA,NA,"Stable Disease","2020-12-07",NA,NA,NA
+"100",NA,NA,NA,NA,NA,"Stable Disease","2020-12-29",NA,NA,"2021-06-22"
+"101",NA,NA,NA,NA,NA,"Partial Response","2021-03-16",NA,NA,NA
+"102","2021-01-15","2021-01-15","Disease progression, relapse during active treatment","2021-01-28","Death","Progressive Disease","2021-01-12",NA,"Dead","2021-01-12"
+"103","2021-05-24","2021-05-24","Disease progression, relapse during active treatment",NA,NA,"Progressive Disease","2021-05-24",NA,NA,"2021-05-24"
+"104",NA,"2021-04-21","Death on study","2021-04-21","Death","Stable Disease","2021-03-19",NA,"Dead",NA
+"105","2021-03-15","2021-03-15","Disease progression, relapse during active treatment","2021-05-22","Death","Progressive Disease","2021-03-05",NA,"Dead","2021-03-05"
+"106","2021-03-19","2021-03-19","Other","2021-04-25","Death","Stable Disease","2021-03-10",NA,"Dead",NA
+"107","2021-03-31","2021-03-31","Disease progression, relapse during active treatment","2021-09-20","Death","Progressive Disease","2021-03-30","2021-06-24","Dead","2021-03-30"
+"108","2022-01-10","2022-01-10","Disease progression, relapse during active treatment",NA,NA,"Partial Response","2021-05-20",NA,NA,"2021-12-20"
+"109",NA,NA,NA,NA,NA,"Stable Disease","2021-07-30",NA,NA,NA
+"110","2021-05-12","2021-05-12","Disease progression, relapse during active treatment","2021-05-28","Death","Progressive Disease","2021-05-06",NA,"Dead","2021-05-06"
+"111",NA,NA,NA,NA,NA,"Stable Disease","2021-07-16",NA,NA,NA
+"112","2021-10-12","2021-10-06","Disease progression, relapse during active treatment",NA,NA,"Progressive Disease","2021-10-05",NA,NA,"2021-10-05"
+"113",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"114","2022-01-13","2022-01-13","Adverse Event/Side Effects/Complications","2022-01-22","Death","Partial Response","2021-12-23",NA,"Dead",NA
+"115","2021-11-04","2021-11-04","Patient withdrawal or refusal after beginning protocol therapy","2021-11-14","Death",NA,NA,NA,"Dead",NA
+"116","2021-11-24","2021-11-24","Disease progression, relapse during active treatment",NA,NA,"Progressive Disease","2021-11-24",NA,NA,"2021-11-24"
+"117",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"118",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"119",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
