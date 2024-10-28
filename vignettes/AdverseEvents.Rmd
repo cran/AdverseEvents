@@ -33,8 +33,6 @@ with RECIST format as response is optional for additional plots). In the OnCore 
 - RECIST data (optional)
 
 
-![Oncore data export.](Oncore1.PNG){width=80%}
-
 # Running the app
 
 Once installed run the function runAEapp() to launch a browser with the application and demo data will be loaded. 
@@ -77,7 +75,6 @@ The response should be one of the following:
 
 [5] "Not Evaluable (NE)"
 
-![Example of RECIST data](subsetofRECISTdata.PNG){width=80%}
 
 ## Data tab 
 
@@ -85,7 +82,7 @@ This is the home page (data tab), on the left upload the data. There are multipl
 data sets and the toxicity data is constructed from merging the uploaded data. 
 
 
-![Home page data upload.](app1.PNG){width=80%}
+![Home page data upload.](front_page_AE.jpg){width=80%}
 
 On the data page there are 5 sub-tabs:
 
@@ -97,7 +94,7 @@ On the data page there are 5 sub-tabs:
 
 Screen shot of the demographic data:
 
-![Demographics.](app2_demodata.PNG){width=80%}
+![Demographics.](demographic_data.jpg){width=80%}
 
 ## AE Plots and Measures
 
