@@ -74,8 +74,8 @@ shiny::shinyServer(function(input, output, session) {
       # if any numeric variable has less than or equal to 5 unique categories,
       # convert it to factor
       dplyr::mutate_if(~ is.numeric(.) & dplyr::n_distinct(.) <= 5, as.factor) %>%
-      dplyr::mutate_at(vars(any_of(grep("date",colnames(.), value = T, ignore.case = T))), as.Date, format="%m/%d/%Y")
-  })
+      dplyr::mutate_at(vars(any_of(grep("date",colnames(.), value = T, ignore.case = T))), as.Date, format="%m/%d/%Y")  
+   })
   demo_data2 <- shiny::reactive({
     #rio::import("demo_data2.xls") %>%
     rio::import("www/demo_demo_data.csv") %>%
@@ -133,7 +133,9 @@ shiny::shinyServer(function(input, output, session) {
       dplyr::filter(is.na(sequence_no) == FALSE)
 
     if ( "cdus_ctcae_toxicity_type_code" %in% names(output)){output <- output %>%
-      dplyr::mutate(cdus_toxicity_type_code = cdus_ctcae_toxicity_type_code)}
+      dplyr::mutate(cdus_toxicity_type_code = cdus_ctcae_toxicity_type_code) 
+    
+    }
 
   } else {
     output <- AE_data_upload() %>% janitor::clean_names() %>%
@@ -154,7 +156,11 @@ shiny::shinyServer(function(input, output, session) {
       output$cdus_toxicity_type_code       <-  output$toxicity
     }
 
-    output<-as.data.frame(output %>% dplyr::filter(is.na(grade)==FALSE))
+    output<-as.data.frame(output %>% dplyr::filter(is.na(grade)==FALSE)  %>%
+                            dplyr::select(-cdus_ctcae_toxicity_type_code,-cycle)) %>%
+      dplyr::select(sequence_no, visit_date, start_date_of_course , onset_date , resolved_date, 
+             cdus_toxicity_type_code, toxicity_category, grade, 
+             attribution_possible, attribution_probable, attribution_definite)
     output
   })
 
@@ -276,7 +282,7 @@ shiny::shinyServer(function(input, output, session) {
 
   output$selected_data <- DT::renderDataTable({
     displayAE_data <- AE_data() %>% dplyr::select(-dplyr::any_of( "initials"))  %>%
-      dplyr::select( dplyr::where( ~!all(is.na(.x)) ) )
+      dplyr::select( dplyr::where( ~!all(is.na(.x)) ) ) #%>% select(sequence_no,grade)  
     DT::datatable(displayAE_data,    rownames = FALSE)
   })
 
@@ -288,7 +294,7 @@ shiny::shinyServer(function(input, output, session) {
 
   output$followup_data <- DT::renderDataTable({
     displayfu_data_upload <- fu_data_upload() %>% dplyr::select(-dplyr::any_of( "initials")) %>%
-      dplyr::select( dplyr::where( ~!all(is.na(.x)) ) )
+      dplyr::select( dplyr::where( ~!all(is.na(.x)) ) ) 
     DT::datatable(displayfu_data_upload, rownames = FALSE)
   })
 
@@ -3318,7 +3324,8 @@ shiny::shinyServer(function(input, output, session) {
             alldataoutput()$toxicity.category.summary.data,
             alldataoutput()$toxicity.type.summary.data)
     a41now<-a400
-
+    
+    
     responseplots<- function(a41=a41,adf = a1$toxicity.ans.summary_sub){
 
       a4.whole.summary<-adf;
@@ -3434,7 +3441,150 @@ shiny::shinyServer(function(input, output, session) {
 
       twolists<-list(coef=coef.list.group,plot=AE.BOR.p.plot.list)
     }
-
+    responseplots<- function(a41=a41,adf = a1$toxicity.ans.summary_sub){
+      
+      a4.whole.summary<-adf;
+      
+      coef.list.group<-AE.BOR.p.plot.list<-list()
+      for(j in 1:length(a41))
+      {
+        #if(j%%10 == 0 ){#print("working on it: #");
+        #print(j)
+        #}
+        a41.tmp<-dplyr::ungroup(a41[[j]])
+        var.drop<-c('AE.category','AE')[c('AE.category','AE')%in%names(a41.tmp)]
+        #---get AE occurrence from sum.unique.AE
+        a41.tmp<-dplyr::select(a41.tmp,-all_of(var.drop))
+        a41.tmp.sum.unique.AE<-a41.tmp%>%dplyr::select(c(pid,dplyr::ends_with('occurrence')))
+        a41.tmp.occurrence<-as.list(a41.tmp.sum.unique.AE)[-1]%>%map_dfr(function(x) as.numeric(x>0))
+        names(a41.tmp.sum.unique.AE)<-sub('occurrence','sum.unique',names(a41.tmp.sum.unique.AE))
+        a41.tmp.fre.duraiton<-a41.tmp%>%dplyr::select(c(pid,dplyr::ends_with(c('fre','duration'))))
+        a41.tmp.new<-cbind(a41.tmp.fre.duraiton,a41.tmp.sum.unique.AE%>%dplyr::select(-pid),a41.tmp.occurrence)
+        a4<-suppressMessages(dplyr::left_join(a41.tmp.new,a4.whole.summary[,c(2,21:dim(a4.whole.summary)[2])]))
+        name.BOR<-c("Complete Response",   "Partial Response","Stable Disease","Progressive Disease")
+        name.BOR.short<-c("CR",   "PR","SD","PD")
+        a40<-a4%>%dplyr::filter(best_response%in%name.BOR)
+        name.BOR1<-names(table(a40$best_response)[table(a40$best_response)>0])
+        a40$best_response<-factor(a40$best_response,level=name.BOR[name.BOR%in%name.BOR1],label=name.BOR.short[name.BOR%in%name.BOR1])
+        AE.var<-names(a40)[2:25]
+        data.tmp<-a40%>%dplyr::select(c(pid,best_response,all_of(AE.var)))%>%tidyr::pivot_longer(cols=-(1:2),names_to ='type',values_to = 'value' )
+        #---comparison of DC (CR/PR/SD) vs PD---
+        tmp.com<-list('DC_vs_PD'=name.BOR.short,'PR_vs_PD'=name.BOR.short[c(1,2,4)],'SD_vs_PD'=name.BOR.short[c(3,4)])
+        var1<-expand.grid(tmp.com,AE.var)
+        var1$BOR<-rep(names(tmp.com),length(AE.var))
+        # print("this is the var 1 df to test the rows")
+        # print(var1)
+        if("AE.category" %in% names(a41[[j]])) {var1$AEtype <- unique(a41[[j]]$AE.category)} else {
+          if("AE" %in% names(a41[[j]])) {var1$AEtype <- unique(a41[[j]]$AE)} else {var1$AEtype <- "whole"
+          }
+        }#end if statements
+        
+        #options(warn=-1)
+        tissue.test.ans<-  pmap(var1,~data.tmp%>%dplyr::filter((best_response%in%..1)&(type%in%..2)))%>%
+          map(function(x)
+          {
+            
+            df <- x %>%
+              # dplyr::mutate(g1 = as.character(factor(x$best_response=='PD',level=c(T,F),label=c('PD','DC')))) %>%
+              dplyr::mutate(g1 = as.character(factor(x$best_response=='PD',level=c(F,T),label=c('PD','DC')))) %>%
+              dplyr::select(value,g1)
+            
+            # print("the df to test:")
+            # print(df)
+            #
+            if( inherits(
+              try(tmp1<-suppressMessages(t.test(df$value~df$g1))
+                  , silent = T)
+              , "try-error",T)
+              
+            ){
+              ans<-c(NA, NA) 
+              ans<-c(NA, NA, NA,NA,NA,NA ) 
+              
+            } else{
+              tmp1<-suppressMessages(t.test(df$value~df$g1))
+              # print("tmp1 ")
+              # print(tmp1 ) 
+              #print("(tmp1$estimate")
+              #print(tmp1$estimate)
+              #print("diff(tmp1$estimate)")
+              #print(diff(tmp1$estimate))
+              
+              xbarDC<-round(unname(tmp1$estimate[1]),2)
+              xbarPD<-round(unname(tmp1$estimate[2]),2)
+              diff2<-xbarDC-xbarPD
+              ans<-c(tmp1$p.value,diff(tmp1$estimate[2:1]))
+              ans<-c(tmp1$p.value,round(diff(tmp1$estimate[2:1]),2),
+                     round(tmp1$conf.int[1],3),round(tmp1$conf.int[2],3),
+                     xbarDC,xbarPD)
+              
+              
+            }
+          })
+        
+        
+        #tissue.test.ans.long<-cbind(var1,t(sapply(tissue.test.ans,c)))
+        # print("*****************************tissue.test.ans.long*****************************")
+        # print(head(tissue.test.ans.long))
+        
+        
+        tissue.test.ans.long<-cbind(var1,t(sapply(tissue.test.ans,c)))%>%
+          rename_all(~c('Best_response','Measurement.type','BOR','AE','p.value','difference',"LCL","UCL",
+                        "meanDC","meanPD" ))%>%
+          dplyr::mutate(Measurement.type=factor(Measurement.type,level=sort(names(table(Measurement.type)))))
+        
+        #THE PLOTS ####
+        #  plot1<-tissue.test.ans.long%>%
+        #    ggplot2::ggplot(ggplot2::aes(y=Measurement.type,x=difference,fill=p.value<0.05))+
+        #    ggplot2::geom_bar(stat = 'identity')+
+        #    #ggplot2::labs(title=paste(trial.id,names(a41)[j],sep='_'),fill='P value')+
+        #    ggplot2::labs(title=paste("",names(a41)[j],sep=''),fill='P value')+
+        #    ggplot2::scale_fill_manual(values=c("cyan","red"),breaks=c(F,T),labels=c('>0.05', '<0.05'))+
+        #    ggplot2::ylab('')+ggplot2::xlab('Difference (PD as reference)')+
+        #    facet_wrap(vars(BOR))
+        #  plot2<-tissue.test.ans.long%>%dplyr::filter(BOR%in%'DC_vs_PD')%>%
+        #    ggplot2::ggplot(ggplot2::aes(y=Measurement.type,x=difference,fill=p.value<0.05))+
+        #    ggplot2::geom_bar(stat = 'identity')+
+        #    #ggplot2::labs(title=paste(trial.id,names(a41)[j],sep='_'),fill='P value')+
+        #    ggplot2::labs(title=paste("",names(a41)[j],sep=''),fill='P value')+
+        #    ggplot2::scale_fill_manual(values=c("cyan","red"),breaks=c(F,T),labels=c('>0.05', '<0.05'))+
+        #    ggplot2::ylab('')+ggplot2::xlab('Difference ( PD-CD )')
+        #  
+        df1<-tissue.test.ans.long
+        plot1 <- tissue.test.ans.long %>% filter(!is.nan(p.value)) %>%
+          ggplot2::ggplot( ggplot2::aes(y = Measurement.type, x = difference, col = p.value<0.05)) + #
+          ggplot2::labs(title=paste("",names(a41)[j],sep=''),fill='P value')+
+          scale_colour_manual(values=c("red","cyan"),breaks=c(T,F),labels=c('<0.05', '>0.05')) +
+          facet_wrap(vars(BOR)) +
+          ggplot2::geom_point(shape = 18, size = 3) +
+          geom_errorbarh(ggplot2::aes(xmin = LCL, xmax = UCL), height = 0.25) +
+          
+          ggplot2::xlab("Difference (PD as reference)") +
+          ggplot2::ylab(" ") + 
+          coord_cartesian(xlim = c(-10, 10) ) 
+        
+        plot2<-tissue.test.ans.long%>%dplyr::filter(BOR%in%'DC_vs_PD')%>% 
+          filter(!is.nan(p.value)) %>%
+          ggplot2::ggplot( ggplot2::aes(y = Measurement.type, x = difference, col = p.value<0.05)) + #
+          ggplot2::labs(title=paste("",names(a41)[j],sep=''),fill='P value')+
+          scale_colour_manual(values=c("red","cyan"),breaks=c(T,F),labels=c('<0.05', '>0.05')) +
+          ggplot2::geom_point(shape = 18, size = 3) +
+          geom_errorbarh(ggplot2::aes(xmin = LCL, xmax = UCL), height = 0.25) +
+          ggplot2::labs(title=paste("",names(a41)[j],sep=''),fill='P value')+
+          ggplot2::scale_fill_manual(values=c("cyan","red"),breaks=c(F,T),labels=c('>0.05', '<0.05'))+
+          ggplot2::ylab('')+ggplot2::xlab('Difference ( CD-PD )')+ 
+          coord_cartesian(xlim = c(-20, 20) )
+        
+        
+        AE.BOR.p.plot.list[[j]]<-list(all_comparison=plot1,DC_PD=plot2)
+        coef.list.group[[j]]<-tissue.test.ans.long
+      }
+      
+      names(AE.BOR.p.plot.list)<-names(coef.list.group)<-names(a41)
+      
+      twolists<-list(coef=coef.list.group,plot=AE.BOR.p.plot.list)
+    }
+    
     # testing_BOR_ans<- responseplots(a41=a41now,adf=toxdataNOW)
     # tibble::as_tibble(do.call(rbind,testing_BOR_ans$coef) %>% dplyr::select(AE,everything()))
 
@@ -3620,7 +3770,8 @@ shiny::shinyServer(function(input, output, session) {
             alldataoutput()$toxicity.category.summary.data,
             alldataoutput()$toxicity.type.summary.data)
     a41<-a400
-
+    
+  
     cor.plot.AE.treatment.time<-list()
     for(i in 1:length(a41))
     {
@@ -3718,7 +3869,8 @@ shiny::shinyServer(function(input, output, session) {
     #---table of ind AE by AE category
 
     q2=table(AE_data()$cdus_toxicity_type_code,AE_data()$toxicity_category)# problem for MCC 18597
-
+    AE_data<-AE_data()
+     
     #---get ind AE under AE category
     q3=q2[rownames(q2)%in%rownames(q1)[!rownames(q1)%in%c('whole',colnames(q2))],,drop=F]
     name1=rownames(q3)
@@ -3800,7 +3952,7 @@ shiny::shinyServer(function(input, output, session) {
 
 
 
-  # <!!!!!!!!!!!!!********(*)(*)<<<<<<<<<<<<COR PLots!!! ####
+  # <<<<<<<<<<<<COR PLots!!! ####
   # TO CHO0SE PLOT TO DISPLAY
   output$rendCORplotSelection <- shiny::renderUI({
     CORplot_list <-  durationanalysis()$plot

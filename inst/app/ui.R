@@ -63,7 +63,7 @@ function(request){
                shiny::tabsetPanel(id = "data_panel",
                                   shiny::tabPanel(
                              htmltools::div(shiny::icon("database"), "AE data"),
-                             DT::dataTableOutput("selected_data")
+                             DT::dataTableOutput("selected_data")  
                            ),  # tab to show raw data
                            shiny::tabPanel(
                              htmltools::div(shiny::icon("database"), "Demographic data"),
@@ -97,14 +97,56 @@ function(request){
                # AE Plots and Measures ####
                shiny::tabPanel("AE Plots and Measures",
                         # htmltools::br(),
-                        htmltools::p("This tab panel contains a swimmers plot of adverse events and tables of AEs."),
-                        htmltools::p("It also provides download buttons to save the plots and data. The AE measures sub-tab contains the data with
-      the calculated AE metrics used in all other tabs for analysis.")
+                        htmltools::p("This tab panel contains the AE measures sub-tab which is used to calculate
+                                     AE metrics used in all other tabs for analysis. Please click Compute AE measures button before any analysis.")
+      ,    
+      
+      htmltools::p("This tab panel also contains swimmers plots and RECIST plots of adverse events and tables of AEs."),
+      htmltools::p("It also provides download buttons to save the plots and data. ")
       ,
       htmltools::br(),
+      # AE measures tab ####
+    
+      
       shiny::tabsetPanel(id = "plot_panel",
-
                          shiny::tabPanel(
+                           htmltools::div(shiny::icon("database"), "AE measures"),
+                           # htmltools::br(),
+                           # htmltools::br(),
+                           htmltools::p("This sub-tab contains the AE data with the calculated metrics used in all other tabs for analysis.
+               Leave 'Early AE time point box' blank for all the data. Category can also be chosen, but may lead to sparse data and
+               the inability to do any analysis. Please click the 'Compute AE measures' button.")
+               ,
+               shiny::fluidRow(
+                 shiny::column(3,
+                               htmltools::div( shiny::actionButton("goAEmeasures", "Compute AE measures" ) )
+                 ),
+                 shiny::column(2,
+                               shiny::numericInput("AEmeasuresEarlyAEcut","Early AE Time Point:", value = NULL, step = 1, min = 1)
+                 ),
+                 shiny::column(3,
+                               shiny::uiOutput("rendAEmeasuresAEcatselect")
+                 ),
+                 shiny::column(3,
+                               shiny::uiOutput("rendAEmeasuresAEtypeselect")
+                 ),
+                 
+                 shiny::column(2,
+                               htmltools::div(shiny::downloadButton('toxicitymeasuresdownload',"Download the data"))
+                 )
+                 
+               ),
+               #htmltools::div(downloadButton('toxicitymeasuresdownload',"Download the data"),
+               htmltools::br(),
+               htmltools::br(),
+               htmltools::br(),
+               shinycssloaders::withSpinner(DT::dataTableOutput("toxicitytableoutput"))
+               #)
+                         ),
+               
+               
+
+               shiny::tabPanel(
                     htmltools::div(shiny::icon("chart-line"), "AE individual swimmers plot and table"),
                     htmltools::p("This sub-tab displays individual swimmers plot and AE table by grade.   ")
                     ,
@@ -164,7 +206,7 @@ function(request){
                   # AE OVERALL table ####
                   shiny::tabPanel(
                     htmltools::div(shiny::icon("database"), "AE table"),
-                    htmltools::p("This sub-tab displays the overall AE table.   ")
+                    htmltools::p("This sub-tab displays the overall AE table (all AEs no cut off time).   ")
                     ,
                     htmltools::div( shiny::downloadButton('AEcounttabledownload',"Download the data"),
                          htmltools::br(),
@@ -178,7 +220,9 @@ function(request){
                   #
                   # AE days ####S
                   shiny::tabPanel(
-                    htmltools::div(shiny::icon("database"), "AE days data"),
+                    htmltools::div(shiny::icon("database"), "AE days data"), 
+                    htmltools::p("This sub-tab displays the number of days a patient had an AE both total and unique days.")
+                    ,
                     htmltools::div(shiny::downloadButton('AEDAYSdownload',"Download the data"),
                         htmltools::br(),
                         htmltools::br(),
@@ -191,41 +235,8 @@ function(request){
 
 
 
-                  # AE measures tab ####
-                  shiny::tabPanel(
-                    htmltools::div(shiny::icon("database"), "AE measures"),
-                    # htmltools::br(),
-                    # htmltools::br(),
-                    htmltools::p("This sub-tab contains the AE data with the calculated metrics used in all other tabs for analysis.
-               Leave 'Early AE time point box' blank for all the data. Category can also be chosen, but may lead to sparse data and
-               the inability to do any analysis. Please click the 'Compute AE measures' button.")
-               ,
-               shiny::fluidRow(
-                 shiny::column(3,
-                        htmltools::div( shiny::actionButton("goAEmeasures", "Compute AE measures" ) )
-                 ),
-                 shiny::column(2,
-                        shiny::numericInput("AEmeasuresEarlyAEcut","Early AE Time Point:", value = NULL, step = 1, min = 1)
-                 ),
-                 shiny::column(3,
-                               shiny::uiOutput("rendAEmeasuresAEcatselect")
-                 ),
-                 shiny::column(3,
-                        shiny::uiOutput("rendAEmeasuresAEtypeselect")
-                 ),
-
-                 shiny::column(2,
-                        htmltools::div(shiny::downloadButton('toxicitymeasuresdownload',"Download the data"))
-                 )
-
-               ),
-               #htmltools::div(downloadButton('toxicitymeasuresdownload',"Download the data"),
-               htmltools::br(),
-               htmltools::br(),
-               htmltools::br(),
-               shinycssloaders::withSpinner(DT::dataTableOutput("toxicitytableoutput"))
-               #)
-                  ),
+    
+               #RECIST PLOT TAB #
                tabPanel(div(icon("chart-line"), "RECIST plot"),
                         span(textOutput("RECIST_Data_Message2"), style="color:red"),
                         uiOutput("rendrecist_plot_patient"),
@@ -336,6 +347,11 @@ function(request){
               #Forest plots OS and PFS tab ####
               shiny::tabPanel( #https://stackoverflow.com/questions/46471756/download-pdf-report-in-shiny
                 htmltools::div(shiny::icon("database"), "Forest plots OS and PFS"),
+                
+                htmltools::p("This sub-tab displays forest plots and the results of the Cox PH models for all AE metrics by AE Category.
+              Both for OS and PFS. Please click the 'Run Coxph models' button.")
+              ,
+                
                 htmltools::div(
                   shiny::actionButton("goforstplotstests", "Run tests" ),
                   htmltools::br()),
@@ -366,6 +382,12 @@ function(request){
         # Response tests tab ####
         shiny::tabPanel( #https://stackoverflow.com/questions/46471756/download-pdf-report-in-shiny
           htmltools::div(shiny::icon("database"), "Response tests"),
+          
+          htmltools::p("This sub-tab displays the results of t-tests for all AE metrics comparing the PD group vs SD, CR+PR, and CR+PR+SD groups.
+              Please click the 'Run tests' button. Plots and results can be downloaded")
+          ,
+          
+          
           htmltools::div(
             shiny::actionButton("goresponsetests", "Run tests" ),
             htmltools::br()),
@@ -413,7 +435,10 @@ function(request){
         # Correlation tab ####
         shiny::tabPanel(
           htmltools::div(shiny::icon("database"), "Correlation"),
-
+          htmltools::p("This sub-tab displays the results of correlation tests for AE metrics with duration of time with AEs.
+              Please click the 'Run tests' button. Plots and results can be downloaded")
+          ,
+          
           htmltools::div(
             shiny::actionButton("goCorrelationtests", "Run tests" ),
             htmltools::br()),

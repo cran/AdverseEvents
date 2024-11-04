@@ -1,121 +1,34 @@
-"sequence_no","followup_start_date","off_treatment_date","off_treatment_reason","off_study_date","off_study_reason","best_response","best_response_date","last_followup_date","last_known_survival_status","date_of_progression"
-1,1970-03-17,1970-03-17,"Disease progression, relapse during active treatment",1970-09-21,"Death","Stable Disease",1970-02-12,1970-08-20,"Dead",1970-03-17
-2,1970-05-06,1970-05-06,"Disease progression, relapse during active treatment",1970-08-17,"Death","Progressive Disease",1970-05-03,1970-06-03,"Dead",1970-05-03
-3,1970-02-03,1970-02-03,"Disease progression, relapse during active treatment",1970-04-04,"Death","Progressive Disease",1970-01-30,1970-02-26,"Dead",1970-01-30
-4,1970-02-12,1970-02-12,"Disease progression, relapse during active treatment",1970-04-24,"Death","Progressive Disease",1970-02-12,1970-03-12,"Dead",1970-02-12
-5,1970-04-07,1970-04-07,"Disease progression, relapse during active treatment",1970-08-12,"Death","Partial Response",1970-02-10,NA,"Dead",1970-04-07
-6,1970-03-02,1970-03-02,"Patient withdrawal or refusal after beginning protocol therapy",1970-08-13,"Death","Stable Disease",1970-02-13,1970-06-02,"Dead",NA
-7,1970-03-03,1970-03-03,"Disease progression, relapse during active treatment",1970-03-24,"Death","Stable Disease",1970-01-28,1970-03-03,"Dead",1970-03-02
-8,1970-02-24,1970-02-24,"Disease progression, relapse during active treatment",1970-11-01,"Death","Progressive Disease",1970-02-24,1970-09-16,"Dead",1970-02-24
-9,1970-08-08,1970-08-08,"Disease progression, relapse during active treatment",1971-01-08,"Death","Stable Disease",1970-05-16,1970-10-31,"Dead",1970-08-08
-10,1970-08-23,1970-08-23,"Disease progression, relapse during active treatment",NA,NA,"Stable Disease",1970-04-05,1974-05-04,"Alive",1970-08-23
-120,NA,NA,"Patient withdrawal or refusal prior to beginning protocol therapy",NA,"Death","Not Assessed",NA,NA,"Dead",NA
-11,1970-07-07,1970-07-07,"Adverse Event/Side Effects/Complications",1971-08-10,"Death","Stable Disease",1970-07-11,1971-04-13,"Dead",1970-10-27
-12,1973-07-26,1973-07-26,"Adverse Event/Side Effects/Complications",1973-09-26,"Death","Partial Response",1970-04-21,NA,"Dead",NA
-13,1970-02-27,1970-02-27,"Death on study",1970-02-27,"Death","Progressive Disease",NA,NA,"Dead",NA
-14,1970-05-20,1970-05-20,"Disease progression, relapse during active treatment",1970-06-11,"Death","Stable Disease",1970-02-20,1970-06-10,"Dead",1970-05-20
-15,1971-02-07,1971-02-07,"Death on study",1971-02-07,"Death","Stable Disease",NA,NA,"Dead",NA
-16,1970-03-10,1970-03-10,"Death on study",1970-03-10,"Death","Stable Disease",1970-02-19,NA,"Dead",NA
-17,1970-01-26,1970-01-26,"Disease progression, relapse during active treatment",1970-03-13,"Death","Progressive Disease",NA,1970-01-26,"Dead",1970-01-13
-18,1971-04-29,1971-04-29,"Adverse Event/Side Effects/Complications",1973-04-16,"Death","Stable Disease",1970-02-17,1973-04-11,"Dead",NA
-19,1970-01-12,1970-01-12,"Patient withdrawal or refusal after beginning protocol therapy",1970-01-12,"Consent withdrawn","Not Assessed",NA,1970-01-12,"Dead",NA
-20,1970-01-12,1970-01-12,"Patient withdrawal or refusal after beginning protocol therapy",1970-08-08,"Death","Not Assessed",NA,1970-06-29,"Dead",1970-01-12
-21,1970-02-16,1970-02-16,"Disease progression, relapse during active treatment",1970-02-25,"Death","Progressive Disease",1970-02-16,1970-02-16,"Dead",1970-02-16
-22,1970-12-09,1970-12-09,"Disease progression, relapse during active treatment",1971-06-10,"Death","Partial Response",1970-07-09,NA,"Dead",1970-10-10
-23,1970-02-17,1970-02-17,"Patient withdrawal or refusal after beginning protocol therapy",1970-02-17,"Patient refused follow-up","Progressive Disease",1970-02-14,NA,"Alive",1970-02-14
-24,1970-11-15,1970-11-15,"Disease progression, relapse during active treatment",1970-12-03,"Death","Stable Disease",1970-05-17,NA,"Dead",1970-11-15
-25,1970-03-17,1970-03-17,"Alternative Therapy",1970-07-07,"Death","Progressive Disease",1970-02-25,1970-05-27,"Dead",1970-02-25
-26,1970-08-15,1970-08-15,"Disease progression, relapse during active treatment",1971-02-23,"Death","Stable Disease",1970-02-14,NA,"Dead",1970-08-15
-27,1970-02-12,1970-02-12,"Disease progression, relapse during active treatment",1971-04-06,"Death","Progressive Disease",1970-02-12,1970-06-09,"Dead",1970-02-12
-28,1972-01-04,1972-01-04,"Other",1972-02-04,"Death","Partial Response",NA,NA,"Dead",NA
-29,1970-12-12,1970-12-12,"Alternative Therapy",1971-09-14,"Death","Stable Disease",NA,NA,"Dead",NA
-30,1970-12-16,1970-12-16,"Disease progression, relapse during active treatment",1971-11-13,"Death","Partial Response",1970-03-27,NA,"Dead",1970-12-16
-31,1970-04-07,1970-04-07,"Disease progression, relapse during active treatment",1970-05-26,"Death","Stable Disease",1970-04-07,1970-04-07,"Dead",1970-04-07
-32,1970-05-20,1970-05-20,"Disease progression, relapse during active treatment",1970-11-15,"Death","Progressive Disease",1970-02-18,1970-08-09,"Dead",1970-05-16
-33,NA,1971-09-09,"Death on study",1971-09-09,"Death","Stable Disease",1970-02-21,NA,"Dead",NA
-34,1970-12-24,1970-12-24,"Disease progression, relapse during active treatment",1973-02-14,"Death","Partial Response",1970-04-02,1972-09-13,"Dead",1970-11-11
-35,1970-07-17,1970-07-17,"Other",1970-07-17,"Patient lost to follow-up","Stable Disease",1970-02-28,NA,"Dead",NA
-36,1971-04-18,1971-04-18,"Disease progression, relapse during active treatment",1972-08-13,"Death","Partial Response",1970-02-12,1971-11-22,"Dead",1971-03-21
-37,1970-04-02,1970-04-02,"Disease progression, relapse during active treatment",1970-11-10,"Death","Progressive Disease",1970-02-19,1970-04-02,"Dead",1970-04-02
-38,1970-04-06,1970-04-06,"Disease progression, relapse during active treatment",1970-10-19,"Death","Stable Disease",1970-02-14,NA,"Dead",1970-04-06
-39,NA,1970-01-31,"Death on study",1970-02-10,"Death","Progressive Disease",1970-01-13,NA,"Dead",1970-01-13
-40,1970-01-31,1970-01-31,"Patient withdrawal or refusal after beginning protocol therapy",1970-04-18,"Death","Progressive Disease",1970-01-11,1970-01-31,"Dead",1970-01-11
-41,1971-01-27,1971-01-27,"Disease progression, relapse during active treatment",1973-07-04,"Death","Partial Response",1970-07-30,1973-02-21,"Dead",1971-01-27
-42,1970-06-24,1970-06-24,"Disease progression before active treatment",1971-04-30,"Death","Stable Disease",1970-02-18,NA,"Dead",1970-06-24
-43,1970-10-26,1970-10-26,"Disease progression, relapse during active treatment",NA,NA,"Stable Disease",1970-02-12,1974-01-14,"Alive",1970-10-26
-44,1972-05-23,1972-05-23,"Disease progression, relapse during active treatment",NA,NA,"Partial Response",1970-03-26,1973-10-12,"Alive",1972-05-23
-45,1970-02-15,1970-02-15,"Disease progression, relapse during active treatment",1970-05-22,"Death","Progressive Disease",1970-02-15,NA,"Dead",1970-02-15
-46,1970-03-24,1970-03-24,"Disease progression, relapse during active treatment",1971-03-08,"Death","Stable Disease",1970-02-07,NA,"Dead",1970-03-24
-47,1970-03-30,1970-03-30,"Patient withdrawal or refusal after beginning protocol therapy",1972-12-21,"Death","Stable Disease",1970-02-13,1972-07-17,"Dead",NA
-48,1970-09-21,1970-09-21,"Adverse Event/Side Effects/Complications",1971-03-15,"Consent withdrawn","Partial Response",1970-03-30,NA,"Dead",NA
-49,1970-04-02,1970-04-02,"Disease progression, relapse during active treatment",1970-12-13,"Death","Stable Disease",1970-02-18,NA,"Dead",1970-04-02
-50,1970-02-23,1970-02-23,"Patient withdrawal or refusal after beginning protocol therapy",1970-02-23,"Consent withdrawn","Progressive Disease",1970-02-13,NA,"Dead",1970-02-13
-51,1970-02-12,1970-02-12,"Disease progression, relapse during active treatment",1970-02-15,"Death","Progressive Disease",1970-02-12,1970-01-27,"Dead",1970-02-12
-52,1970-02-12,1970-02-12,"Disease progression, relapse during active treatment",1970-05-20,"Death","Progressive Disease",1970-02-12,NA,"Dead",1970-02-12
-53,1970-02-21,1970-02-21,"Patient withdrawal or refusal after beginning protocol therapy",1970-05-07,"Death","Stable Disease",1970-02-21,NA,"Dead",NA
-54,1971-12-18,1971-12-18,"Disease progression, relapse during active treatment",1972-06-23,"Death","Partial Response",1970-02-13,1972-06-03,"Dead",1971-12-18
-55,1970-12-31,1970-12-31,"Disease progression, relapse during active treatment",1971-04-09,"Patient refused follow-up","Stable Disease",1970-02-19,1971-04-09,"Alive",1970-12-31
-56,1970-02-12,1970-02-12,"Disease progression, relapse during active treatment",1972-03-08,"Death","Progressive Disease",1970-02-12,1971-07-08,"Dead",1970-02-12
-57,1972-04-04,1972-04-04,"Treatment completed per protocol criteria",NA,NA,"Partial Response",1970-04-07,NA,"Alive",1973-07-16
-58,1970-02-19,1970-02-19,"Disease progression before active treatment",NA,NA,"Progressive Disease",1970-02-19,1973-08-05,"Alive",1970-02-19
-59,1970-02-15,1970-02-15,"Disease progression, relapse during active treatment",1971-05-29,"Death","Progressive Disease",1970-02-15,1971-02-11,"Dead",1970-02-15
-60,1970-03-29,1970-03-29,"Disease progression, relapse during active treatment",1971-04-08,"Death","Partial Response",1970-02-15,NA,"Dead",1970-03-29
-61,1971-11-27,1971-11-27,"Disease progression, relapse during active treatment",NA,NA,"Partial Response",1971-08-21,1973-01-18,"Alive",1971-11-27
-62,1970-08-04,1970-08-04,"Patient off treatment for other complicating disease",1970-10-09,"Death","Stable Disease",1970-02-13,NA,"Dead",NA
-63,1970-02-26,1970-02-26,"Disease progression, relapse during active treatment",1970-03-06,"Death","Stable Disease",1970-02-13,1970-02-26,"Dead",1970-02-26
-64,1970-05-06,1970-05-06,"Disease progression, relapse during active treatment",1971-03-31,"Death","Stable Disease",1970-02-12,1971-01-13,"Dead",1970-03-28
-65,1971-03-28,1971-03-28,"Disease progression, relapse during active treatment",1971-06-28,"Death","Partial Response",1970-11-15,NA,"Dead",1971-03-28
-66,1970-02-05,1970-02-05,"Death on study",1970-02-05,"Death","Progressive Disease",1970-01-30,NA,"Dead",1970-01-30
-67,1972-03-05,1972-03-05,"Treatment completed per protocol criteria",NA,NA,"Partial Response",1970-07-09,NA,"Alive",NA
-68,1970-05-04,1970-05-04,"Adverse Event/Side Effects/Complications",1970-08-08,"Death","Stable Disease",1970-03-29,NA,"Dead",1970-06-22
-69,1970-05-10,1970-05-10,"Adverse Event/Side Effects/Complications",1970-05-27,"Death","Stable Disease",1970-02-15,NA,"Dead",NA
-70,1971-07-07,1971-07-07,"Adverse Event/Side Effects/Complications",1972-05-28,"Death","Partial Response",1970-04-04,1971-10-30,"Dead",NA
-71,1970-03-06,1970-03-06,"Disease progression, relapse during active treatment",1970-05-01,"Death","Progressive Disease",1970-03-06,NA,"Dead",1970-03-06
-72,1972-02-12,1972-02-12,"Treatment completed per protocol criteria",NA,NA,"Partial Response",1970-02-19,NA,"Alive",NA
-73,1970-03-04,1970-02-18,"Disease progression, relapse during active treatment",1970-04-07,"Death","Progressive Disease",1970-02-18,NA,"Dead",1970-02-18
-74,1970-02-23,1970-02-23,"Disease progression, relapse during active treatment",1970-04-28,"Death","Progressive Disease",1970-02-23,NA,"Dead",1970-02-23
-75,1971-03-04,1971-03-04,"Other",1971-03-23,"Death","Partial Response",1970-03-30,NA,"Dead",NA
-76,1970-04-09,1970-04-09,"Death on study",1970-04-09,"Death","Stable Disease",1970-02-15,NA,"Dead",NA
-77,1970-09-19,1970-09-19,"Disease progression, relapse during active treatment",1971-01-29,"Death","Partial Response",1970-03-28,1970-12-12,"Dead",1970-09-19
-78,1970-05-27,1970-05-27,"Adverse Event/Side Effects/Complications",1971-04-28,"Death","Partial Response",1970-04-08,1971-02-04,"Dead",1970-05-27
-79,1970-01-31,1970-01-31,"Disease progression, relapse during active treatment",1970-11-09,"Death","Progressive Disease",1970-01-31,1970-10-03,"Dead",1970-01-31
-80,NA,1970-02-12,"Death on study",1970-02-12,"Death","Stable Disease",1970-01-25,NA,"Dead",NA
-81,1970-05-15,1970-05-15,"Alternative Therapy",NA,NA,"Stable Disease",1970-02-17,1972-11-24,"Alive",NA
-82,1970-07-22,1970-07-22,"Patient withdrawal or refusal after beginning protocol therapy",1970-09-10,"Consent withdrawn","Partial Response",1970-03-31,1970-09-10,"Dead",NA
-83,1970-02-19,1970-02-19,"Disease progression, relapse during active treatment",NA,NA,"Stable Disease",1970-01-13,1972-03-23,"Alive",1970-02-18
-84,1970-03-05,1970-03-05,"Disease progression, relapse during active treatment",1970-06-05,"Death","Progressive Disease",1970-03-05,NA,"Dead",1970-03-05
-85,1972-01-16,1972-01-16,"Treatment completed per protocol criteria",NA,NA,"Partial Response",1970-02-17,NA,"Alive",NA
-86,1972-03-09,1972-03-09,"Treatment completed per protocol criteria",NA,NA,"Partial Response",1971-08-12,NA,"Alive",NA
-87,1970-08-21,1970-08-21,"Disease progression, relapse during active treatment",NA,NA,"Stable Disease",1970-05-14,1971-10-06,"Alive",1970-08-12
-88,NA,1972-01-16,"Treatment completed per protocol criteria",NA,NA,"Partial Response",1971-10-17,NA,"Alive",NA
-89,NA,1970-01-27,"Patient withdrawal or refusal after beginning protocol therapy",1970-01-28,"Consent withdrawn","Not Assessed",NA,NA,"Dead",NA
-90,1970-04-06,1970-04-06,"Death on study",1970-04-06,"Death","Progressive Disease",1970-02-23,1970-04-06,"Dead",1970-02-23
-91,1970-03-30,1970-03-30,"Disease progression, relapse during active treatment",1971-03-26,"Death","Progressive Disease",1970-02-13,1971-03-02,"Dead",1970-03-30
-92,1970-01-07,1970-01-07,"Death on study",1970-01-07,"Death","Not Evaluable",NA,1970-01-07,"Dead",NA
-93,NA,NA,NA,NA,NA,"Partial Response",1970-08-13,NA,"Alive",NA
-94,NA,NA,NA,NA,NA,"Stable Disease",1970-02-12,NA,"Alive",NA
-95,1970-04-07,1970-04-07,"Disease progression, relapse during active treatment",1970-04-18,"Death","Stable Disease",1970-02-16,NA,"Dead",1970-04-07
-96,1970-02-24,1970-02-24,"Adverse Event/Side Effects/Complications",1970-07-22,"Death","Stable Disease",1970-02-15,NA,"Dead",NA
-97,NA,1970-02-09,"Death on study",1970-02-09,"Death","Not Assessed",NA,NA,"Dead",NA
-98,1970-02-14,1970-02-14,"Disease progression, relapse during active treatment",NA,NA,"Progressive Disease",1970-02-13,1971-01-16,NA,1970-02-13
-99,NA,NA,NA,NA,NA,"Stable Disease",1970-02-16,NA,NA,NA
-100,NA,NA,NA,NA,NA,"Stable Disease",1970-02-23,NA,NA,1970-08-17
-101,NA,NA,NA,NA,NA,"Partial Response",1971-03-11,NA,NA,NA
-102,1970-01-31,1970-01-31,"Disease progression, relapse during active treatment",1970-02-13,"Death","Progressive Disease",1970-01-28,NA,"Dead",1970-01-28
-103,1970-05-18,1970-05-18,"Disease progression, relapse during active treatment",NA,NA,"Progressive Disease",1970-05-18,NA,NA,1970-05-18
-104,NA,1970-03-24,"Death on study",1970-03-24,"Death","Stable Disease",1970-02-19,NA,"Dead",NA
-105,1970-02-01,1970-02-01,"Disease progression, relapse during active treatment",1970-04-10,"Death","Progressive Disease",1970-01-22,NA,"Dead",1970-01-22
-106,1970-02-05,1970-02-05,"Other",1970-03-14,"Death","Stable Disease",1970-01-27,NA,"Dead",NA
-107,1970-02-20,1970-02-20,"Disease progression, relapse during active treatment",1970-08-12,"Death","Progressive Disease",1970-02-19,1970-05-16,"Dead",1970-02-19
-108,1970-11-24,1970-11-24,"Disease progression, relapse during active treatment",NA,NA,"Partial Response",1970-04-03,NA,NA,1970-11-03
-109,NA,NA,NA,NA,NA,"Stable Disease",1970-05-09,NA,NA,NA
-110,1970-02-14,1970-02-14,"Disease progression, relapse during active treatment",1970-03-02,"Death","Progressive Disease",1970-02-08,NA,"Dead",1970-02-08
-111,NA,NA,NA,NA,NA,"Stable Disease",1970-03-28,NA,NA,NA
-112,1970-02-16,1970-02-10,"Disease progression, relapse during active treatment",NA,NA,"Progressive Disease",1970-02-09,NA,NA,1970-02-09
-113,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-114,1970-04-19,1970-04-19,"Adverse Event/Side Effects/Complications",1970-04-28,"Death","Partial Response",1970-03-29,NA,"Dead",NA
-115,1970-01-21,1970-01-21,"Patient withdrawal or refusal after beginning protocol therapy",1970-01-31,"Death",NA,NA,NA,"Dead",NA
-116,1970-02-13,1970-02-13,"Disease progression, relapse during active treatment",NA,NA,"Progressive Disease",1970-02-13,NA,NA,1970-02-13
-117,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-118,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-119,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"sequence_no","followup_start_date","off_treatment_date","off_study_date","best_response","best_response_date","last_followup_date","last_known_survival_status","date_of_progression"
+25,1970-02-17,1970-02-17,1970-02-17,"Progressive Disease",1970-02-14,NA,"Alive",1970-02-14
+31,1970-08-15,1970-08-15,1971-02-23,"Stable Disease",1970-02-14,NA,"Dead",1970-08-15
+1,1970-08-08,1970-08-08,1971-01-08,"Stable Disease",1970-05-16,1970-10-31,"Dead",1970-08-08
+29,1970-03-17,1970-03-17,1970-07-07,"Progressive Disease",1970-02-25,1970-05-27,"Dead",1970-02-25
+13,1970-03-03,1970-03-03,1970-03-24,"Stable Disease",1970-01-28,1970-03-03,"Dead",1970-03-02
+17,1970-02-24,1970-02-24,1970-11-01,"Progressive Disease",1970-02-24,1970-09-16,"Dead",1970-02-24
+21,1970-08-23,1970-08-23,1976-02-26,"Stable Disease",1970-04-05,1974-05-04,"Dead",1970-08-23
+33,1970-11-15,1970-11-15,1970-12-03,"Stable Disease",1970-05-17,NA,"Dead",1970-11-15
+20,NA,1970-01-31,1970-02-10,"Progressive Disease",1970-01-13,NA,"Dead",1970-01-13
+16,1970-07-07,1970-07-07,1971-08-10,"Stable Disease",1970-07-11,1971-04-13,"Dead",1970-10-27
+4,1973-07-26,1973-07-26,1973-09-26,"Partial Response",1970-04-21,NA,"Dead",NA
+32,1970-02-27,1970-02-27,1970-02-27,"Progressive Disease",NA,NA,"Dead",NA
+27,1970-02-16,1970-02-16,1970-02-25,"Progressive Disease",1970-02-16,1970-02-16,"Dead",1970-02-16
+22,1971-04-29,1971-04-29,1973-04-16,"Stable Disease",1970-02-17,1973-04-11,"Dead",NA
+12,1972-01-04,1972-01-04,1972-02-04,"Partial Response",NA,NA,"Dead",NA
+15,1970-07-22,1970-07-22,1970-07-22,"Stable Disease",1970-02-28,NA,"Dead",NA
+6,1970-01-31,1970-01-31,1970-04-18,"Progressive Disease",1970-01-11,1970-01-31,"Dead",1970-01-11
+19,1970-05-06,1970-05-06,1970-08-17,"Progressive Disease",1970-05-03,1970-06-03,"Dead",1970-05-03
+26,1970-03-02,1970-03-02,1970-08-13,"Stable Disease",1970-02-13,1970-06-02,"Dead",NA
+11,1970-01-12,1970-01-12,1970-08-08,"Not Assessed",NA,1970-06-29,"Dead",1970-01-12
+7,1971-02-07,1971-02-07,1971-02-07,"Stable Disease",NA,NA,"Dead",NA
+5,1970-12-09,1970-12-09,1971-06-10,"Partial Response",1970-07-09,NA,"Dead",1970-10-10
+14,1970-04-07,1970-04-07,1970-08-12,"Partial Response",1970-02-10,NA,"Dead",1970-04-07
+18,1970-02-12,1970-02-12,1970-04-24,"Progressive Disease",1970-02-12,1970-03-12,"Dead",1970-02-12
+8,1970-03-10,1970-03-10,1970-03-10,"Stable Disease",1970-02-19,NA,"Dead",NA
+3,1970-01-26,1970-01-26,1970-03-13,"Progressive Disease",NA,1970-01-26,"Dead",1970-01-13
+30,1970-05-20,1970-05-20,1970-11-15,"Progressive Disease",1970-02-18,1970-08-09,"Dead",1970-05-16
+2,1970-03-17,1970-03-17,1970-09-21,"Stable Disease",1970-02-12,1970-08-20,"Dead",1970-03-17
+10,1970-02-03,1970-02-03,1970-04-04,"Progressive Disease",1970-01-30,1970-02-26,"Dead",1970-01-30
+28,1970-05-20,1970-05-20,1970-06-11,"Stable Disease",1970-02-20,1970-06-10,"Dead",1970-05-20
+24,1970-01-12,1970-01-12,1970-01-12,"Not Assessed",NA,1970-01-12,"Dead",NA
+9,1970-12-12,1970-12-12,1971-09-14,"Stable Disease",NA,NA,"Dead",NA
+23,1970-04-07,1970-04-07,1970-05-26,"Stable Disease",1970-04-07,1970-04-07,"Dead",1970-04-07
