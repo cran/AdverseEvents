@@ -2857,7 +2857,8 @@ shiny::shinyServer(function(input, output, session) {
   # Display survival::coxph output for AE measures ####
   output$kmcophinfo <- DT::renderDataTable({
     todisplay <-  kmandcoxphinfofromtoxdata()$coef.data   %>%
-      dplyr::mutate(dplyr::across(dplyr::where(is.numeric), round, 4)) %>%
+     # dplyr::mutate(dplyr::across(dplyr::where(is.numeric), round, 4)) %>%
+      dplyr::mutate(dplyr::across(dplyr::where(is.numeric),\(x) round(x, 4))) %>%
       dplyr::filter(is.na(coef)==FALSE)
     DT::datatable(todisplay, rownames = FALSE, options = list(pageLength = 72))
 
@@ -2867,7 +2868,8 @@ shiny::shinyServer(function(input, output, session) {
 
   kmandcoxphinfofromtoxdatadisplay<- shiny::reactive({
     kmandcoxphinfofromtoxdata()$coef.data   %>%
-      dplyr::mutate(dplyr::across(dplyr::where(is.numeric), round, 4)) %>%
+      #dplyr::mutate(dplyr::across(dplyr::where(is.numeric), round, 4)) %>%
+      dplyr::mutate(dplyr::across(dplyr::where(is.numeric),\(x) round(x, 4))) %>%
       dplyr::filter(is.na(coef)==FALSE)
   })
 
@@ -3230,14 +3232,18 @@ shiny::shinyServer(function(input, output, session) {
   })
 
   output$forestplotcophinfo <- DT::renderDataTable({
-    todisplay <-  responsePvaluelistforestplots()$coef.long %>% dplyr::mutate(dplyr::across(dplyr::where(is.numeric), round, 4))
+    todisplay <-  responsePvaluelistforestplots()$coef.long %>% 
+     # dplyr::mutate(dplyr::across(dplyr::where(is.numeric), round, 4))
+          dplyr::mutate(dplyr::across(dplyr::where(is.numeric),\(x) round(x, 4)))  
     #todisplay
     DT::datatable(todisplay, rownames = FALSE, options = list(pageLength = 100))
   })
 
 
   forestplotcophinfodatadisplay <- shiny::reactive({
-    todisplay <-  responsePvaluelistforestplots()$coef.long %>% dplyr::mutate(dplyr::across(dplyr::where(is.numeric), round, 4))
+    todisplay <-  responsePvaluelistforestplots()$coef.long %>% 
+      # dplyr::mutate(dplyr::across(dplyr::where(is.numeric), round, 4))
+      dplyr::mutate(dplyr::across(dplyr::where(is.numeric),\(x) round(x, 4)))  
     todisplay
   })
 
@@ -3775,32 +3781,108 @@ shiny::shinyServer(function(input, output, session) {
     cor.plot.AE.treatment.time<-list()
     for(i in 1:length(a41))
     {
-      tmp1<-dplyr::left_join(a0,a41[[i]])%>%dplyr::select(pid,treatment.time,AE.var)
-      #options(warn=-1)
-
+      tmp1<-dplyr::left_join(a0,a41[[i]])%>%dplyr::select(pid,treatment.time,all_of(AE.var))
       cor1<-cor(tmp1[,c('treatment.time',AE.var)],method = 'pearson', use = "complete.obs")[1,]
       cor1<-data.frame(AE.measurement.type=names(cor1)[-1],r=round(cor1[-1],3))
       #print(head(cor1))
       treatment.time<-tmp1$treatment.time
       cor1$pvalue<-apply(tmp1[,AE.var],2,function(x){
-
+        
         if( inherits(
           try(cor.test(x,treatment.time,method='pearson')$p.value
-
               , silent = T)
           , "try-error",T)
-
+          
         ){ NA } else{
+          
+          cortestdata<-cor.test(x,treatment.time,method='pearson')
+          # print(names(cortestdata))
+          # print(cortestdata$conf.int)
           round(cor.test(x,treatment.time,method='pearson')$p.value,5)
         }
       }
       )#end apply
-
-      plot1<-cor1%>%ggplot2::ggplot(ggplot2::aes(y=AE.measurement.type,x=r,fill=pvalue<0.05))+ggplot2::geom_bar(stat = 'identity')+ggplot2::scale_fill_manual(values=c("cyan","red"),breaks=c(F,T),labels=c('>0.05', '<0.05'))+
-        ggplot2::xlab('correlation coefficient (r)')+ggplot2::ylab('')+ggplot2::labs(title=names(a41)[i],fill='P value')
+      cor1$LCL<-apply(tmp1[,AE.var],2,function(x){
+        
+        if( inherits(
+          try(cor.test(x,treatment.time,method='pearson')$p.value
+              , silent = T)
+          , "try-error",T)
+          
+        ){ NA } else{
+          
+          cortestdata<-cor.test(x,treatment.time,method='pearson')
+          
+          round(cortestdata$conf.int[1],3)
+        }
+      }
+      )#end apply 
+      
+      cor1$UCL<-apply(tmp1[,AE.var],2,function(x){
+        
+        if( inherits(
+          try(cor.test(x,treatment.time,method='pearson')$p.value
+              , silent = T)
+          , "try-error",T)
+          
+        ){ NA } else{
+          
+          cortestdata<-cor.test(x,treatment.time,method='pearson')
+          
+          round(cortestdata$conf.int[2],3)
+          #round(cor.test(x,treatment.time,method='pearson')$p.value,5)
+        }
+      }
+      )#end apply
+      
+      
+      # print(cor1) # there is more VVVV
+      
+      plot1<-cor1%>%ggplot2::ggplot(ggplot2::aes(y=AE.measurement.type,x=r,col=pvalue<0.05))+
+        ggplot2::scale_fill_manual(values=c("cyan","red"),breaks=c(F,T),labels=c('>0.05', '<0.05'))+
+        ggplot2::geom_point(shape = 18, size = 3) +
+        geom_errorbarh(ggplot2::aes(xmin = LCL, xmax = UCL), height = 0.25) +
+        coord_cartesian(xlim = c(-1.1, 1.1) ) +
+        ggplot2::xlab('correlation coefficient (r)')+
+        ggplot2::ylab('')+
+        ggplot2::labs(title=names(a41)[i],fill='P value')
+      
+      # x11();
+      # print(plot1)
+      
+      
+      
+      # plot1 <- tissue.test.ans.long %>% 
+      #   ggplot2::ggplot( ggplot2::aes(y = Measurement.type, x = difference, col = p.value<0.05)) + #
+      #   ggplot2::labs(title=paste("",names(a41)[j],sep=''),fill='P value')+
+      #   scale_colour_manual(values=c("red","cyan"),breaks=c(T,F),labels=c('<0.05', '>0.05')) +
+      #   facet_wrap(vars(BOR)) +
+      #   ggplot2::geom_point(shape = 18, size = 3) +
+      #   geom_errorbarh(ggplot2::aes(xmin = LCL, xmax = UCL), height = 0.25) +
+      #   
+      #   ggplot2::xlab("Difference (PD as reference)") +
+      #   ggplot2::ylab(" ") + 
+      #   coord_cartesian(xlim = c(-20, 20) )
+      # 
+      # 
+      
+      
+      
       cor.plot.AE.treatment.time[[i]]<-plot1
       cor.data[[i]]<-cor1
     }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     names(cor.plot.AE.treatment.time)<-names(cor.data)<-names(a41)
     cor.AE.treatment.time.ans<-list(cor=cor.data,plot=cor.plot.AE.treatment.time)
 
@@ -3926,6 +4008,9 @@ shiny::shinyServer(function(input, output, session) {
   output$cornumericalresults <- DT::renderDataTable({
     CORplot_list <-  durationanalysis()$plot
     todisplay <-  do.call("rbind",CORplot_list$cor)
+    todisplay <- todisplay %>% mutate(AEcategory =  sub("\\..*", "", rownames(todisplay))) %>%
+      select(AEcategory, AE.measurement.type,r , pvalue,LCL,UCL)
+    
     DT::datatable(todisplay, rownames = FALSE, options = list(pageLength = 72))
 
   })

@@ -1,10 +1,11 @@
-53359a28b7d2abfa7c9c834158cc1b4b *DESCRIPTION
+9884351814bb6820fb52c259ba40b64a *DESCRIPTION
 7baa11b8ea733e5519a88c25d937c558 *NAMESPACE
 06c9a7ef0e5c212787e5ec5a5c1ffb4e *R/resp_code_transform.R
 288db6223029e514473bc24271251fb3 *R/runAEapp.R
+54c861b9601506bccd9ad1f933a678ab *README.md
 b5a7e73549be27165f4cb236a04992ed *build/vignette.rds
 3909bd0335292dcf4ae860b2cefff111 *inst/app/R/global.R
-c4918d9412244c95f594ace13a502d51 *inst/app/server.R
+7e1c01924f7c0b60ec7d7b47f7dbf2ec *inst/app/server.R
 9c8df3c70e8cf748341cc0c35e93cf3b *inst/app/summaryreport.Rmd
 46c7786a0b029d6d52357ddd34b8c2d8 *inst/app/template.Rmd
 c61c26f663e3f1a567fe3800b3ba0324 *inst/app/template_AEREplots.Rmd
@@ -23,7 +24,7 @@ be77f3d032e5613df80fb697da86e144 *inst/app/www/demo_recist_data.csv
 6107d024d04f834b6dab5d77ade462e2 *inst/app/www/style.css
 006a08f4bad9b71bc3e4312330d495c9 *inst/doc/AdverseEvents.R
 1027cd1e4190f7cceeb6bc3f058aa4c2 *inst/doc/AdverseEvents.Rmd
-3758cd696b4eb8030c3d5d63b357915d *inst/doc/AdverseEvents.html
+db8fecdb25f30cc51bbb9dfa004b5793 *inst/doc/AdverseEvents.html
 9dc68a51550ec9d3d24a1b3ec03a1725 *inst/images/Thumbs.db
 9bafa4aac891af4138225b7bff67d2f6 *man/resp_code_transform.Rd
 ad9b85d8271cb6411492dcfcea7cd9df *man/runAEapp.Rd
@@ -35,11 +36,11 @@ ef4211787f201ee2c67a03f9063442df *vignettes/Forestplots.PNG
 931bfeae2f024bec2260ff3550e1daeb *vignettes/Thumbs.db
 1e93041271b1728f0159a04397932f09 *vignettes/app1.PNG
 b018e71dd15804aff70464ab1216eaf3 *vignettes/app2_demodata.PNG
-2c39353cd8bfa45f43b5efcaaee7fd97 *vignettes/correlations.PNG
+cc62c05c365681bcb04035a8250c900c *vignettes/correlations.PNG
 c8cbb31749a6a68e0f5c000f632481aa *vignettes/demographic_data.jpg
 ba10f927d600fe8e4595948fbea322f9 *vignettes/front_page_AE.jpg
 050354c66492fdf0cda5af0711dfb1c6 *vignettes/responsesummary.PNG
-3973edbb4e8b28e7a921c3123b8db126 *vignettes/responsetests.PNG
+a04f41a159c1d9578ef53d3ffe20b20a *vignettes/responsetests.PNG
 7b990a9561752d935d83847ad2cc8ebb *vignettes/survivalanalysis.PNG
 c10fbe6da8be7614e1c06c011083513e *vignettes/survsummary.PNG
 5d066ba37d146603fcf7351b8a3e4c7d *vignettes/swimmersplot.PNG
